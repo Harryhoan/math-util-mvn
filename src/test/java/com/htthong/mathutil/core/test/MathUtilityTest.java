@@ -34,8 +34,24 @@ public class MathUtilityTest {
     public void verifyFactorialGivenRightArgument6ReturnsOk() {
         assertEquals(720, MathUtility.getFactorial(6));
     }
-    public void verifyFactorialGivenRightArgument20ReturnsOk() {
-        assertEquals("Invalid input. n must be between 0 and 20", MathUtility.getFactorial(20));
-    }
 
+    // 3 Test case trên ko đẹp, bốc mùi(Bad Smell), vì chỉ khác nhau phần data
+    // Trong nghề kiểm thử có 1 kĩ thuật đó là tách hẳn data kiểm thử ra
+    // 1 chỗ cho dễ nhìn, dễ quả đc data thiếu đủ hay ko
+    
+    // Sau đó ta đưa bộ data này vào trong câu lệnh so sánh ASSERT()
+    // Qua các tham số (PARAMETER)
+    // Tức là AssertEquals(Expected, Actual) là 2 tham số
+    // Ứng với bộ data đc tách ra
+    //                          120         5!
+    //                          720         6!
+    //                          24          4!
+    //                          6           3!
+    //                          2           2!
+    //                          ...
+    
+    //                      MẢNG [4] [2] {0, 1} {2, 2} {3,6} {5, 120}
+    // Code nhìn gọn, phát hiện đc thiếu đủ test data, test case
+    // Kĩ thuật tách data kiểm thử ra khỏi câu lệnh so sánh -> đc gọi
+    // Là DDT - data driven testing - kiểm thử theo hướng tách data riêng rẽ
 }
